@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<portscope rows="2" columns="2" carrier="mcast">
+<plot 
+gridx="0"
+gridy="0"
+hspan="1"
+vspan="1"
+title="Plot right hip Position"
+minval="-200"
+maxval="200"
+bgcolor="LightGrey">
+<graph remote="/bigman/right_arm/state:o"
+index="0"
+color="Green"
+title="hipR"
+size="3"
+type="points"  />
+<graph remote="/bigman/right_arm/state:o"
+index="1"
+color="Blue"
+title="hipY"
+size="2"
+type="lines" />
+<graph remote="/bigman/right_arm/state:o"
+index="2"
+color="Red"
+title="hipP"
+size="2"
+type="lines" />
+</plot>
+<plot 
+gridx="0"
+gridy="1"
+hspan="1"
+vspan="1"
+title="Plot right lower leg"
+minval="-200"
+maxval="200"
+bgcolor="LightGrey">
+<graph remote="/bigman/right_arm/state:o"
+index="3"
+color="Red"
+title="Knee"
+size="2"
+type="lines" />
+<graph remote="/bigman/right_arm/state:o"
+index="4"
+color="Blue"
+title="ankelP" 
+size="2"
+type="points" />
+<graph remote="/bigman/right_arm/state:o"
+index="5"
+color="Magenta"
+title="ankelR"
+size="2" 
+type="lines"/>
+</plot>
+<plot 
+gridx="1"
+gridy="0"
+hspan="1"
+vspan="1"
+title="Plot left hip Position"
+minval="-200"
+maxval="200"
+bgcolor="LightGrey">
+<graph remote="/bigman/left_arm/state:o"
+index="0"
+color="Yellow"
+title="hipR"
+size="2"
+type="lines" />
+<graph remote="/bigman/left_arm/state:o"
+index="1"
+color="Blue"
+title="hipY"
+size="2" 
+type="lines" />
+<graph remote="/bigman/left_arm/state:o"
+index="2"
+color="Red"
+title="hipP"
+size="2"
+type="lines" />
+</plot>
+<plot 
+gridx="1"
+gridy="1"
+hspan="1"
+vspan="1"
+title="Plot left lower leg"
+minval="-200"
+maxval="200"
+bgcolor="LightGrey">
+<graph remote="/bigman/left_arm/state:o"
+index="3"
+color="Red"
+title="Knee" 
+size="2" 
+type="lines"/>
+<graph remote="/bigman/left_arm/state:o"
+index="4"
+color="Blue"
+title="ankelP"
+size="2"
+type="points" />
+<graph remote="/bigman/left_arm/state:o"
+index="5"
+color="Magenta"
+title="ankelR"
+size="2"
+type="lines" />
+</plot>
+</portscope>

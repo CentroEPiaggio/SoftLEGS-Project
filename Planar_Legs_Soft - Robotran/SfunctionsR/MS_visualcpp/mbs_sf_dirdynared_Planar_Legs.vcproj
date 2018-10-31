@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VisualStudioProject Version="9,00">
+   <Platforms>
+      <Platform Name="Win32"/>
+   </Platforms>
+   <Configurations>
+      <Configuration ConfigurationType="2" Name="Debug|Win32">
+         <Tool AdditionalIncludeDirectories="&#34;/Applications/MATLAB_R2016a.app\extern\include&#34;;&#34;/Applications/MATLAB_R2016a.app\simulink\include&#34;;&#34;/Users/unipi/.robotran/MBsysLab/mbs_simulink/mbs_sourceC&#34;;&#34;/Users/unipi/Documents/MBProjects/Planar_Legs/symbolicR&#34;;&#34;/Users/unipi/Documents/MBProjects/Planar_Legs/SfunctionsR/src_user&#34;;" DebugInformationFormat="1" Name="VCCLCompilerTool" PreprocessorDefinitions="__STDC__;MATLAB_MEX_FILE;DIRDYNARED;"/>
+         <Tool AdditionalDependencies="libmx.lib libmex.lib libmat.lib " AdditionalLibraryDirectories="/Applications/MATLAB_R2016a.app\extern\lib\win\microsoft;" AdditionalOptions="/export:&#34;mexFunction&#34;" GenerateDebugInformation="true" Name="VCLinkerTool" OutputFile="/Users/unipi/Documents/MBProjects/Planar_Legs/workR\mbs_sf_dirdynared_Planar_Legs.mexmaci64"/>
+      </Configuration>
+   </Configurations>
+   <Files>
+      <Filter Name="Project">
+         <File RelativePath="/Users/unipi/.robotran/MBsysLab/mbs_simulink/mbs_sourceC\LocalDataStruct.c"/>
+         <File RelativePath="/Users/unipi/.robotran/MBsysLab/mbs_simulink/mbs_sourceC\LocalDataStruct.h"/>
+         <File RelativePath="/Users/unipi/.robotran/MBsysLab/mbs_simulink/mbs_sourceC\MBSdataStruct.c"/>
+         <File RelativePath="/Users/unipi/.robotran/MBsysLab/mbs_simulink/mbs_sourceC\MBSdataStruct.h"/>
+         <File RelativePath="/Users/unipi/.robotran/MBsysLab/mbs_simulink/mbs_sourceC\MBSdef.h"/>
+         <File RelativePath="/Users/unipi/.robotran/MBsysLab/mbs_simulink/mbs_sourceC\MBSfun.h"/>
+         <File RelativePath="/Users/unipi/.robotran/MBsysLab/mbs_simulink/mbs_sourceC\MBSsensorStruct.c"/>
+         <File RelativePath="/Users/unipi/.robotran/MBsysLab/mbs_simulink/mbs_sourceC\MBSsensorStruct.h"/>
+         <File RelativePath="/Users/unipi/.robotran/MBsysLab/mbs_simulink/mbs_sourceC\mbs_close_loops.c"/>
+         <File RelativePath="/Users/unipi/.robotran/MBsysLab/mbs_simulink/mbs_sourceC\mbs_compute_model.c"/>
+         <File RelativePath="/Users/unipi/.robotran/MBsysLab/mbs_simulink/mbs_sourceC\mbs_dirdynared.c"/>
+         <File RelativePath="/Users/unipi/.robotran/MBsysLab/mbs_simulink/mbs_sourceC\mbs_sf_main.c"/>
+         <File RelativePath="/Users/unipi/.robotran/MBsysLab/mbs_simulink/mbs_sourceC\sf_IOPort.c"/>
+         <File RelativePath="/Users/unipi/.robotran/MBsysLab/mbs_simulink/mbs_sourceC\sf_InitCond.c"/>
+         <File RelativePath="/Users/unipi/.robotran/MBsysLab/mbs_simulink/mbs_sourceC\sfdef.h"/>
+      </Filter>
+      <Filter Name="Tools">
+         <File RelativePath="/Users/unipi/.robotran/MBsysLab/mbs_simulink/mbs_sourceC\choldc.c"/>
+         <File RelativePath="/Users/unipi/.robotran/MBsysLab/mbs_simulink/mbs_sourceC\cholsl.c"/>
+         <File RelativePath="/Users/unipi/.robotran/MBsysLab/mbs_simulink/mbs_sourceC\lubksb.c"/>
+         <File RelativePath="/Users/unipi/.robotran/MBsysLab/mbs_simulink/mbs_sourceC\ludcmp.c"/>
+         <File RelativePath="/Users/unipi/.robotran/MBsysLab/mbs_simulink/mbs_sourceC\lut.c"/>
+         <File RelativePath="/Users/unipi/.robotran/MBsysLab/mbs_simulink/mbs_sourceC\lut.h"/>
+         <File RelativePath="/Users/unipi/.robotran/MBsysLab/mbs_simulink/mbs_sourceC\mbs_bakker.c"/>
+         <File RelativePath="/Users/unipi/.robotran/MBsysLab/mbs_simulink/mbs_sourceC\mbs_calspan.c"/>
+         <File RelativePath="/Users/unipi/.robotran/MBsysLab/mbs_simulink/mbs_sourceC\mbs_kine_wheel.c"/>
+         <File RelativePath="/Users/unipi/.robotran/MBsysLab/mbs_simulink/mbs_sourceC\mbs_matrix.c"/>
+         <File RelativePath="/Users/unipi/.robotran/MBsysLab/mbs_simulink/mbs_sourceC\mbs_matrix.h"/>
+         <File RelativePath="/Users/unipi/.robotran/MBsysLab/mbs_simulink/mbs_sourceC\mbs_tool.c"/>
+         <File RelativePath="/Users/unipi/.robotran/MBsysLab/mbs_simulink/mbs_sourceC\mbs_tool.h"/>
+         <File RelativePath="/Users/unipi/.robotran/MBsysLab/mbs_simulink/mbs_sourceC\norm.c"/>
+         <File RelativePath="/Users/unipi/.robotran/MBsysLab/mbs_simulink/mbs_sourceC\nrfct.h"/>
+         <File RelativePath="/Users/unipi/.robotran/MBsysLab/mbs_simulink/mbs_sourceC\nrutil.c"/>
+         <File RelativePath="/Users/unipi/.robotran/MBsysLab/mbs_simulink/mbs_sourceC\nrutil.h"/>
+         <File RelativePath="/Users/unipi/.robotran/MBsysLab/mbs_simulink/mbs_sourceC\svbksb.c"/>
+         <File RelativePath="/Users/unipi/.robotran/MBsysLab/mbs_simulink/mbs_sourceC\svdcmp.c"/>
+      </Filter>
+      <Filter Name="Symbolic">
+         <File RelativePath="/Users/unipi/Documents/MBProjects/Planar_Legs/symbolicR\mbs_cons_hJ_Planar_Legs.c"/>
+         <File RelativePath="/Users/unipi/Documents/MBProjects/Planar_Legs/symbolicR\mbs_cons_hJ_Planar_Legs.h"/>
+         <File RelativePath="/Users/unipi/Documents/MBProjects/Planar_Legs/symbolicR\mbs_cons_jdqd_Planar_Legs.c"/>
+         <File RelativePath="/Users/unipi/Documents/MBProjects/Planar_Legs/symbolicR\mbs_cons_jdqd_Planar_Legs.h"/>
+         <File RelativePath="/Users/unipi/Documents/MBProjects/Planar_Legs/symbolicR\mbs_dirdyna_Planar_Legs.c"/>
+         <File RelativePath="/Users/unipi/Documents/MBProjects/Planar_Legs/symbolicR\mbs_dirdyna_Planar_Legs.h"/>
+         <File RelativePath="/Users/unipi/Documents/MBProjects/Planar_Legs/symbolicR\mbs_extforces_Planar_Legs.c"/>
+         <File RelativePath="/Users/unipi/Documents/MBProjects/Planar_Legs/symbolicR\mbs_extforces_Planar_Legs.h"/>
+         <File RelativePath="/Users/unipi/Documents/MBProjects/Planar_Legs/symbolicR\mbs_gensensor_Planar_Legs.c"/>
+         <File RelativePath="/Users/unipi/Documents/MBProjects/Planar_Legs/symbolicR\mbs_gensensor_Planar_Legs.h"/>
+         <File RelativePath="/Users/unipi/Documents/MBProjects/Planar_Legs/symbolicR\mbs_link3D_Planar_Legs.c"/>
+         <File RelativePath="/Users/unipi/Documents/MBProjects/Planar_Legs/symbolicR\mbs_link3D_Planar_Legs.h"/>
+         <File RelativePath="/Users/unipi/Documents/MBProjects/Planar_Legs/symbolicR\mbs_link_Planar_Legs.c"/>
+         <File RelativePath="/Users/unipi/Documents/MBProjects/Planar_Legs/symbolicR\mbs_link_Planar_Legs.h"/>
+         <File RelativePath="/Users/unipi/Documents/MBProjects/Planar_Legs/symbolicR\mbs_sensor_Planar_Legs.c"/>
+         <File RelativePath="/Users/unipi/Documents/MBProjects/Planar_Legs/symbolicR\mbs_sensor_Planar_Legs.h"/>
+      </Filter>
+      <Filter Name="User">
+         <File RelativePath="/Users/unipi/Documents/MBProjects/Planar_Legs/SfunctionsR/src_user\UserModelStruct.c"/>
+         <File RelativePath="/Users/unipi/Documents/MBProjects/Planar_Legs/SfunctionsR/src_user\UserModelStruct.h"/>
+         <File RelativePath="/Users/unipi/Documents/MBProjects/Planar_Legs/SfunctionsR/src_user\userDef.h"/>
+         <File RelativePath="/Users/unipi/Documents/MBProjects/Planar_Legs/SfunctionsR/src_user\user_Derivative.c"/>
+         <File RelativePath="/Users/unipi/Documents/MBProjects/Planar_Legs/SfunctionsR/src_user\user_DrivenJoints.c"/>
+         <File RelativePath="/Users/unipi/Documents/MBProjects/Planar_Legs/SfunctionsR/src_user\user_ExtForces.c"/>
+         <File RelativePath="/Users/unipi/Documents/MBProjects/Planar_Legs/SfunctionsR/src_user\user_GroundLevel.c"/>
+         <File RelativePath="/Users/unipi/Documents/MBProjects/Planar_Legs/SfunctionsR/src_user\user_JointForces.c"/>
+         <File RelativePath="/Users/unipi/Documents/MBProjects/Planar_Legs/SfunctionsR/src_user\user_Link3Dforces.c"/>
+         <File RelativePath="/Users/unipi/Documents/MBProjects/Planar_Legs/SfunctionsR/src_user\user_Linkforces.c"/>
+         <File RelativePath="/Users/unipi/Documents/MBProjects/Planar_Legs/SfunctionsR/src_user\user_WheelForces.c"/>
+         <File RelativePath="/Users/unipi/Documents/MBProjects/Planar_Legs/SfunctionsR/src_user\user_compute_output.c"/>
+         <File RelativePath="/Users/unipi/Documents/MBProjects/Planar_Legs/SfunctionsR/src_user\user_cons_hJ.c"/>
+         <File RelativePath="/Users/unipi/Documents/MBProjects/Planar_Legs/SfunctionsR/src_user\user_cons_jdqd.c"/>
+         <File RelativePath="/Users/unipi/Documents/MBProjects/Planar_Legs/SfunctionsR/src_user\user_initialization.c"/>
+         <File RelativePath="/Users/unipi/Documents/MBProjects/Planar_Legs/SfunctionsR/src_user\user_sf_IO.c"/>
+         <File RelativePath="/Users/unipi/Documents/MBProjects/Planar_Legs/SfunctionsR/src_user\user_sf_IO.h"/>
+      </Filter>
+   </Files>
+</VisualStudioProject>

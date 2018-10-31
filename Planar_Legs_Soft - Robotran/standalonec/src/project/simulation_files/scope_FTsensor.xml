@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<portscope rows="1" columns="1" carrier="mcast">
+<plot 
+gridx="0"
+gridy="0"
+hspan="1"
+vspan="1"
+title="Plot FT XYZ Sensor right leg"
+minval="-600"
+maxval="600"
+bgcolor="LightGrey">
+<graph remote="/bigman/r_leg_ft/analog:o/forceTorque"
+index="0"
+color="Orange"
+title="RFx"
+size="2"
+type="lines" />
+<graph remote="/bigman/r_leg_ft/analog:o/forceTorque"
+index="1"
+color="Blue"
+title="RFy"
+size="2"
+type="lines" />
+<graph remote="/bigman/r_leg_ft/analog:o/forceTorque"
+index="2"
+color="Red"
+title="RFz"
+size="2"
+type="lines" />
+</plot>
+<plot 
+gridx="0"
+gridy="1"
+hspan="1"
+vspan="1"
+title="Plot FT RPY Sensor right leg"
+minval="-600"
+maxval="600"
+bgcolor="LightGrey">
+<graph remote="/bigman/r_leg_ft/analog:o/forceTorque"
+index="3"
+color="Orange"
+title="RTx"
+size="2"
+type="lines" />
+<graph remote="/bigman/r_leg_ft/analog:o/forceTorque"
+index="4"
+color="Blue"
+title="RTy"
+size="2"
+type="lines" />
+<graph remote="/bigman/r_leg_ft/analog:o/forceTorque"
+index="5"
+color="Red"
+title="RTz"
+size="2"
+type="lines" />
+</plot>
+<plot 
+gridx="1"
+gridy="0"
+hspan="1"
+vspan="1"
+title="Plot FT XYZ Sensor left leg"
+minval="-200"
+maxval="200"
+bgcolor="LightGrey">
+<graph remote="/bigman/l_leg_ft/analog:o/forceTorque"
+index="0"
+color="Orange"
+title="LFx" 
+size="2"
+type="lines"/>
+<graph remote="/bigman/l_leg_ft/analog:o/forceTorque"
+index="1"
+color="Blue"
+title="LFy" 
+size="2"
+type="lines"/>
+<graph remote="/bigman/l_leg_ft/analog:o/forceTorque"
+index="2"
+color="Red"
+title="LFz" 
+size="2"
+type="lines"/>
+</plot>
+<plot 
+gridx="1"
+gridy="1"
+hspan="1"
+vspan="1"
+title="Plot FT RPY Sensor left leg"
+minval="-200"
+maxval="200"
+bgcolor="LightGrey">
+<graph remote="/bigman/l_leg_ft/analog:o/forceTorque"
+index="3"
+color="Orange"
+title="LFx" 
+size="2"
+type="lines"/>
+<graph remote="/bigman/l_leg_ft/analog:o/forceTorque"
+index="4"
+color="Blue"
+title="LFy" 
+size="2"
+type="lines"/>
+<graph remote="/bigman/l_leg_ft/analog:o/forceTorque"
+index="5"
+color="Red"
+title="LFz" 
+size="2"
+type="lines"/>
+</plot>
+</portscope>

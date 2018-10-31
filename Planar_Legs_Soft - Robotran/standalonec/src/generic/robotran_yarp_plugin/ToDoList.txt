@@ -1,0 +1,229 @@
+for the motionControlDriver the interface we need (the ones on the gazeboplugins are)
+    public IPositionControl2,
+    public IVelocityControl,
+    public IAmplifierControl,
+    public IEncodersTimed,
+    public IControlCalibration2,
+    public IControlLimits2,
+    public IInteractionMode,
+    public DeviceResponder,
+    public IControlMode2,
+    public ITorqueControl,
+    public IPositionDirect,
+    public IImpedanceControl,
+    public IOpenLoopControl,
+    public IPidControl
+
+More in detail, the functions are the following:
+
+**********************************************************************
+  DONE
+
+    virtual bool getEncoder(int j, double* v); 		
+    virtual bool getEncoders(double* encs); 		
+    virtual bool getEncodersTimed(double* encs, double* time);
+    virtual bool getEncoderTimed(int j, double* encs, double* time);
+    virtual bool positionMove(int j, double ref);
+    virtual bool positionMove(const double* refs); 
+    virtual bool positionMove(const int n_joint, const int* joints, const double* refs);
+    virtual bool getAxes(int* ax);
+    virtual bool getTorque(int j, double *t); 
+    virtual bool getTorques(double *t); 
+    bool setPosition(int j, double ref);
+    bool setPositions(const int n_joint, const int *joints, double *refs);
+    bool setPositions(const double *refs);
+    bool getLimits(int axis, double *min, double *max);    TBC
+
+    virtual bool getEncoderSpeed(int j, double* sp); 
+    virtual bool getEncoderSpeeds(double* spds);
+    virtual bool getEncoderAcceleration(int j, double* spds);
+    virtual bool getEncoderAccelerations(double* accs);
+
+    virtual bool setPositionMode();
+    virtual bool setPositionMode(int j);
+
+    virtual bool checkMotionDone(int j, bool* flag);
+    virtual bool checkMotionDone(bool* flag);
+    virtual bool checkMotionDone(const int n_joint, const int* joints, bool* flags);
+
+    virtual bool setPositionDirectMode();
+
+    virtual bool setTorqueMode(int j);  // only P gains available
+    virtual bool setTorqueMode();       // only P gains available
+    virtual bool setRefTorque(int j, double t); 
+    virtual bool setRefTorques(const double *t); 
+
+    virtual bool setControlMode(const int j, const int mode);  Should add impedance, ...
+    virtual bool setControlModes(const int n_joint, const int *joints, int *modes);
+    virtual bool setControlModes(int *modes);
+    virtual bool getControlMode(int j, int *mode); 
+    virtual bool getControlModes(int *modes); 
+    virtual bool getControlModes(const int n_joint, const int *joints, int *modes);
+
+    virtual bool setRefSpeed(int j, double sp);
+    virtual bool setRefSpeeds(const double *spds);
+    virtual bool setRefSpeeds(const int n_joint, const int *joints, const double *spds); 
+
+    virtual bool setVelocityMode();   
+    virtual bool setVelocityMode(int j);
+    virtual bool velocityMove(int j, double sp); 
+    virtual bool velocityMove(const double *sp); 
+
+    virtual bool setOpenLoopMode();     
+    virtual bool setOpenLoopMode(int j); 
+    virtual bool setRefOutput(int j, double v);
+    virtual bool setRefOutputs(const double *v);
+    virtual bool getOutput(int j, double *v);
+    virtual bool getOutputs(double *v);
+    virtual bool getRefOutput(int j, double *v);
+    virtual bool getRefOutputs(double *v);
+
+    bool setInteractionMode(int axis, yarp::dev::InteractionModeEnum mode);
+    bool setInteractionModes(int n_joints, int *joints, yarp::dev::InteractionModeEnum* modes);
+    bool setInteractionModes(yarp::dev::InteractionModeEnum* modes); 
+    bool getInteractionMode(int axis, yarp::dev::InteractionModeEnum* mode);
+    bool getInteractionModes(int n_joints, int *joints, yarp::dev::InteractionModeEnum* modes);
+    bool getInteractionModes(yarp::dev::InteractionModeEnum* modes);
+
+**********************************************************************
+  TO BE DONE
+* High priority  
+
+    bool getVelLimits(int axis, double *min, double *max); 
+    bool setVelLimits(int axis, double min, double max); 
+
+* Medium priority
+
+    virtual bool setRefAcceleration(int j, double acc); 
+    virtual bool setRefAccelerations(const double *accs); 
+    virtual bool setRefAccelerations(const int n_joint, const int* joints, const double* accs);
+
+* Less priority
+// stops the current motion in case of internal trajectory generation by putting the target position equal to the current position
+    virtual bool stop(int j);		
+    virtual bool stop(); 
+    virtual bool stop(const int n_joint, const int *joints);
+
+    virtual bool relativeMove(int j, double delta); //NOT TESTED on gazebo nor on the real robot
+    virtual bool relativeMove(const double* deltas); //NOT TESTED
+    virtual bool relativeMove(const int n_joint, const int* joints, const double* deltas);
+  
+    virtual bool getImpedance(int j, double *stiffness, double *damping); // [Nm/deg] & [Nm*sec/deg]
+    virtual bool setImpedance(int j, double stiffness, double damping); // [Nm/deg] & [Nm*sec/deg]
+    virtual bool setImpedanceOffset(int j, double offset);
+    virtual bool getImpedanceOffset(int j, double* offset);
+    virtual bool getCurrentImpedanceLimit(int j, double *min_stiff, double *max_stiff, double *min_damp, double *max_damp);
+    bool setLimits(int axis, double min, double max); 
+
+* Very less priority
+    virtual bool getRefSpeed(int j, double* ref);  // getting the last sent reference is good for sanity check but less used in practise
+    virtual bool getRefSpeeds(double* spds);
+    virtual bool getRefSpeeds(const int n_joint, const int *joints, double *spds);
+    virtual bool getRefAcceleration(int j, double *acc); 
+    virtual bool getRefAccelerations(double *accs); 
+    virtual bool getRefAccelerations(const int n_joint, const int *joints, double *accs);
+    virtual bool getRefTorque(int j, double *t);   
+    virtual bool getRefTorques(double *t);
+
+**********************************************************************
+  NOT DONE ON GAZEBO BUT maybe USEFUL FOR US (not priority anyway)
+
+    virtual bool setPid (int j, const Pid &pid);
+    virtual bool setPids (const Pid *pids);
+    virtual bool setReference (int j, double ref);
+    virtual bool setReferences (const double *refs);
+    virtual bool setErrorLimit (int j, double limit);
+    virtual bool setErrorLimits (const double *limits);
+    virtual bool getError (int j, double *err);
+    virtual bool getErrors (double *errs);
+    virtual bool getPid (int j, Pid *pid);
+    virtual bool getPids (Pid *pids);
+    virtual bool getReference (int j, double *ref);
+    virtual bool getReferences (double *refs);
+    virtual bool getErrorLimit (int j, double *limit);
+    virtual bool getErrorLimits (double *limits);
+    virtual bool resetPid (int j);
+    virtual bool disablePid (int j);
+    virtual bool enablePid (int j);
+    virtual bool setOffset (int j, double v);
+
+    virtual bool enableAmp(int j); //NOT IMPLEMENTED
+    virtual bool disableAmp(int j); //NOT IMPLEMENTED
+
+    virtual bool setMaxCurrent(int j, double v); //NOT IMPLEMENTED
+    virtual bool getAmpStatus(int *st); //NOT IMPLEMENTED
+    virtual bool getAmpStatus(int k, int *v); //NOT IMPLEMENTED
+
+    virtual bool getCurrent(int j, double *val);   // the data current is not updated in robotran so it is meaningless (for now)
+    virtual bool getCurrents(double *vals);        // missing on gazebo ;)
+
+**********************************************************************
+    very very future work (not done on gazebo right now)
+
+    virtual bool setTorquePid(int j, const Pid &pid); //NOT IMPLEMENTED
+    virtual bool getTorqueRange(int j, double *min, double *max); //NOT IMPLEMENTED
+    virtual bool getTorqueRanges(double *min, double *max); //NOT IMPLEMENTED
+    virtual bool setTorquePids(const Pid *pids); //NOT IMPLEMENTED
+    virtual bool setTorqueErrorLimit(int j, double limit); //NOT IMPLEMENTED
+    virtual bool setTorqueErrorLimits(const double *limits); //NOT IMPLEMENTED
+    virtual bool getTorqueError(int j, double *err); //NOT IMPLEMENTED
+    virtual bool getTorqueErrors(double *errs); //NOT IMPLEMENTED
+    virtual bool getTorquePidOutput(int j, double *out); //NOT IMPLEMENTED
+    virtual bool getTorquePidOutputs(double *outs); //NOT IMPLEMENTED
+    virtual bool getTorquePid(int j, Pid *pid); //NOT IMPLEMENTED
+    virtual bool getTorquePids(Pid *pids); //NOT IMPLEMENTED
+    virtual bool getTorqueErrorLimit(int j, double *limit); //NOT IMPLEMENTED
+    virtual bool getTorqueErrorLimits(double *limits); //NOT IMPLEMENTED
+    virtual bool resetTorquePid(int j); //NOT IMPLEMENTED
+    virtual bool disableTorquePid(int j); //NOT IMPLEMENTED
+    virtual bool enableTorquePid(int j); //NOT IMPLEMENTED
+    virtual bool setTorqueOffset(int j, double v); //NOT IMPLEMENTED
+    virtual bool calibrate2(int j, unsigned int iv, double v1, double v2, double v3); //NOT IMPLEMENTED
+    virtual bool done(int j); // NOT IMPLEMENTED
+
+**********************************************************************
+  NO NEED OF BEING IMPLEMENTED 
+
+    virtual bool resetEncoder(int j); 
+    virtual bool resetEncoders(); 
+    virtual bool setEncoder(int j, double val); 
+    virtual bool setEncoders(const double* vals); 
+    virtual bool getBemfParam(int j, double *bemf); //NOT IMPLEMENTED
+    virtual bool setBemfParam(int j, double bemf); //NOT IMPLEMENTED
+    virtual bool setImpedancePositionMode(int j); 
+    virtual bool setImpedanceVelocityMode(int j); 
+
+**********************************************************************   
+
+* Force Torque sensor
+
+High priority
+currently the code is not generic but specific to Ground contact Model. (it uses GRF)
+To add a 6 axis force sensor to a body we should add 6 fixed joints. This requires to change the model and is thus future work
+
+**********************************************************************
+
+Other sensor to be implemented is the IMU, the data need to have this format
+/**
+ *
+ * Export an inertial sensor.
+ * The network interface is a single Port.
+ * We will stream bottles with 12 floats:
+ * 0  1   2  = Euler orientation data 
+ * 3  4   5  = Calibrated 3-axis (X, Y, Z) acceleration data
+ * 6  7   8  = Calibrated 3-axis (X, Y, Z) gyroscope data
+ * 9 10 11   = Calibrated 3-axis (X, Y, Z) magnetometer data
+ *
+ * \todo TODO check orientation data
+ */
+
+and has the following functions:
+    virtual bool read(yarp::sig::Vector &out)
+    virtual bool getChannels(int *nc)  -> should return 12
+    virtual bool calibrate(int ch, double v)  -. no need to be implemented
+
+
+Other sensors could be velocity sensor and joint torque sensor, but I hope to remove them asap from the robot/gazebo so i think we can delay those to later and see what happens.
+
+
+

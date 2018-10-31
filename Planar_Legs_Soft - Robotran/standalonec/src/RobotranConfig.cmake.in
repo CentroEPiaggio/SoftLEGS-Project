@@ -1,0 +1,16 @@
+# - Config file for the FooBar package
+# It defines the following variables
+#  ROBOTRAN_INCLUDE_DIRS - include directories for FooBar
+#  ROBOTRAN_LIBRARIES    - libraries to link against
+#  ROBOTRAN_EXECUTABLE   - the bar executable
+
+# Compute paths
+get_filename_component(ROBOTRAN_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+set(ROBOTRAN_INCLUDE_DIRS @ROBOTRAN_INCLUDE_DIRS@)
+
+# Our library dependencies (contains definitions for IMPORTED targets)
+include("${ROBOTRAN_CMAKE_DIR}/RobotranTargets.cmake")
+
+# These are IMPORTED targets created by RobotranTargets.cmake
+set(ROBOTRAN_LIBRARIES @robotran_libraries@)
+set(ROBOTRAN_EXECUTABLE @Executable@)

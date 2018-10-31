@@ -1,0 +1,85 @@
+% Definition of the simulation variables and I/O ports (available in MBSdata->user_IO)
+% For each line: varname , type , size
+%
+% 4 types of simulation variables:
+%       . NONE   : normal variables
+%       . IN     : user inputs coming from the Matlab environment
+%       . OUT    : user outputs to analyse results in Matlab
+%       . STRUCT : structures
+%
+% their corresponding type fields:
+%       . NONE   : internal variable (type: int/double)
+%       . IN     : input (type: int/double)
+%       . OUT    : output (type: int/double)
+%       . STRUCT : structure variable (type: structure name without ' or "")
+%
+%   - varname = name of the variable (without '' or "")
+%
+%   - size: number of elements in the vector
+%       1    :  simple variable
+%       n    :  vector of n (n>1) elements
+%       [m n]:  tabular of 2 entries with a size m*n 
+%       0    :  forbidden
+%       <1   :  pointer -> fabs(x) = number of stars
+%          indexes start at 1 -> different from 'control_variables' 
+%
+% Lines starting with % or // are not taken into account (comments)
+% Write the corresponding variables under # NONE, # IN, # OUT, # STRUCT
+% Do modify the lines # NONE, # IN, # OUT, # STRUCT or add another line starting with #
+% Keep at least one space between different variables, do not use other signs (, . :)
+%
+
+
+%% ---- NONE ---- %%
+
+# NONE
+
+%% ---- JOINTS CONTROLLER VARIABLES ---- %%
+
+% voltage of the DC motors
+Voltage   double   31
+currents  double   31
+
+%Impedance control gain
+k_stiff  	double  31
+k_damp		double  31
+
+% last time controller was called 
+last_t_ctrl   double   1
+
+% Ground contact model (GCM)
+
+compute_gcm void -1
+
+
+% contact 3D
+
+contactGestion void -1
+
+
+% restart of floating base
+FB_state double  6
+restart   int  1
+
+%% ---- IN ---- %%
+
+# IN
+
+%% ---- OUT ---- %%
+
+# OUT
+
+%% ---- STRUCT ---- %%
+
+# STRUCT
+
+
+% PIDs of low level controllers
+PIDs_pos   ControllerPIDs    1
+PIDs_torque   ControllerPIDs    1
+
+% actuator data structure
+actuatorsStruct   ActuatorsStruct   1
+
+% controller struct
+cvs   ControllerStruct   1
