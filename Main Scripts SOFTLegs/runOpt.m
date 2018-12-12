@@ -3,6 +3,4 @@ function runOpt(Robotran_SLeg_Path)
     cd(strcat(Robotran_SLeg_Path,'workR'));
     % run
     optimal_Kel_walk_experiments_Multi_Sims;
-%     optimal_Kel_walk_experiments_Multi_Sims_GRAVITY;
-
 end

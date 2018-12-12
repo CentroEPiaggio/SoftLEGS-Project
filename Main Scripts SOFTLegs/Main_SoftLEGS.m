@@ -23,8 +23,11 @@ Robotran_SLeg_Path = 'C:\Users\richi\Documents\MBProjects\Planar_Legs_Soft\';
 %% Run the optimization procedure inside the folder "workR" of the
 %  Robotran project
 % @Param:
-%       Walk_Speed; the range of speed that you want to use for the maps
-%       Foot_H; the range of step high that you want to use for the maps
+%       walkS; the range of speed that you want to use for the maps
+%       stepH; the range of step high that you want to use for the maps
+%       stepL; the range of step length that you want to use for the maps
+%       beta; the range of beta that you want to use for the maps (only if
+%               you use the useBeta = 1 flag
 % NB: the parameters are passed inside the function
 % @Return:
 %       Whole_*_*; overall OPT dataset (inside the results folder) 
@@ -46,7 +49,6 @@ useBeta = 1;
 beta = 0.34;%[0.15:0.05:0.56]; 
 
 %run
-% runOpt_BETA(Robotran_SLeg_Path); 
 runOpt(Robotran_SLeg_Path);
 cd(Main_Path);
 
@@ -58,6 +60,8 @@ cd(Main_Path);
 % @Param:
 %       Whole_*_* (line 19); all the data saved from the optimizations 
 %       succ_cases (line 20); the success cases to be used
+%       N_PCs; number of principal component to be used
+%       polyDegree; degree of the polynomial interpolant to be used
 % NB: the parameters are loaded inside the function named "Process_Signals_Pre_PCA"
 % @Return:
 %       set_SVD_TH; contains a struct with the same name that have first and second PC and mu
@@ -71,7 +75,6 @@ N_PCs = 3;
 polyDegree = 3;
 
 %run
-% runMaps_BETA(SLeg_Path); 
 runMaps(SLeg_Path);
 cd('..');
 
@@ -82,6 +85,9 @@ cd('..');
 % @Param:
 %       Whole_*_* (line 22); all the data saved from the optimizations 
 %       succ_cases (line 23); the success cases to be used
+%       N_Step; number of step to be replicated
+%       toSkip; number to trajectories to be skipped (otherwise the .h file
+%               results to big)
 % NB: the parameters are loaded inside the function named "Create_dataset_NO_dataset"
 % @Return:
 %       Optimal_Dataset_NO; header file to use the OPT walk with the SoftLegs GUI
@@ -123,5 +129,4 @@ Robotran_Simul_Path = 'C:\Users\richi\Documents\MBProjects\Camminata\';
 % NOTE: Make sure to pass the right parameter as third params!!!
 %run
 runTraj(SLeg_Path,v,fh,fl,setName,Robotran_Simul_Path); 
-% runTraj_GRAVITY(SLeg_Path,v,fh,fl,slope,setName);
 cd(Main_Path);
