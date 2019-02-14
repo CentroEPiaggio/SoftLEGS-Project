@@ -57,6 +57,9 @@ for data_set=1:1
         %     run('Support/Create_CM_fun');
             %% EDITED By RICCARDO MENGACCI TO ADD THE THIRD PARAMETER FOR FITTING
             run('Support/Create_CM_fun_MultiParam');
+            % Also generate the .h for ROS use
+            run('Support/Create_CM_fun_MultiParam_ROS');
+            run('Support/Create_DATASET_values_ROS');
         end
 
     end
