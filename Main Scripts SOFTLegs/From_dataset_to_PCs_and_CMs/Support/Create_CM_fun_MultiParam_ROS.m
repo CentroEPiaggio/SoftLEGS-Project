@@ -4,8 +4,19 @@
 
 clc
 
-global N_PCs polyDegree
+% I should check if the variables are defined, otherwise the script return
+%   wrong header files (miss some raws). This is mandatory if you run this
+%   script standalone
+if ~(exist('N_PCs') || exist('polyDegree'))
+    disp('----------------------------------------------------- ');
+    disp('PLEASE define the <N_PCs> and <polyDegree> variables!');
+    disp('----------------------------------------------------- ');
+    disp('');
+    return
+end
 
+global N_PCs polyDegree
+     
 STR = {'Traj_','Pose_'};
 PC_Str = {'First_','Second_','Third_','Fourth_','Fifth_','Sixth_'};
 ALL_FUN_NAME = {};

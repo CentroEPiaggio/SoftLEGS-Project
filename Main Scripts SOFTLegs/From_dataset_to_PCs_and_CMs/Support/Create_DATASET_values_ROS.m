@@ -32,7 +32,7 @@ fprintf(fileID,'\n');
 PCs_m = set_SVD_TH{1};
 for i=1:size(set_SVD_TH{1}, 1)
     for j=1:size(set_SVD_TH{1}, 2)
-        fprintf(fileID, ['PCs(',num2str(i-1),',',num2str(j-1),') =',num2str(PCs_m(i,j)),'\n']); 
+        fprintf(fileID, ['PCs(',num2str(i-1),',',num2str(j-1),') =',num2str(PCs_m(i,j)),';\n']); 
     end   
 end
 
@@ -42,7 +42,7 @@ fprintf(fileID,'\n');
 Mus_m = set_SVD_TH{4};
 for i=1:size(set_SVD_TH{4}, 1)
     for j=1:size(set_SVD_TH{4}, 2)
-        fprintf(fileID, ['Mus(',num2str(i-1),',',num2str(j-1),') =',num2str(Mus_m(i,j)),'\n']); 
+        fprintf(fileID, ['Mus(',num2str(i-1),',',num2str(j-1),') =',num2str(Mus_m(i,j)),';\n']); 
     end   
 end
 
