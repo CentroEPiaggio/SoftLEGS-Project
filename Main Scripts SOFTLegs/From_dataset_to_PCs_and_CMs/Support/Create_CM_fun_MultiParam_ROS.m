@@ -1,6 +1,11 @@
 % This files generates the .h header file filled with the map functions, 
 % properly obtained from the dataset, used in the ROS synergies node to 
 % dirve the SOFTLegs
+% ----------------------------------------------------------------------
+%	Version: 1.0 
+%	Date: 16/02/2019
+%	Author: Mengacci Riccardo
+% ----------------------------------------------------------------------
 
 clc
 
@@ -31,6 +36,7 @@ fprintf(fileID,'\n');
 fprintf(fileID,['\tGenerated automatically the ',datestr(datetime)],'\n');
 fprintf(fileID,'\n------------------------------------------------------------------------- */\n');
 fprintf(fileID,['#include<iterator> \n']);
+fprintf(fileID,['#include <synergies/spline.h> \n']);
 % name of the function
 fprintf(fileID,['Eigen::MatrixXd From_Syn_To_Traj(double speed,double foot_h, double foot_l,Eigen::MatrixXd PCs_Synergy, Eigen::MatrixXd Mus_Synergy){ \n']);
 fprintf(fileID,'\n');
@@ -57,7 +63,7 @@ fprintf(fileID,'// PCs');
 fprintf(fileID,'\n');
 fprintf(fileID, 'for(int i=0;i<r_PCs;i++){ \n');
 for i_syn=1:N_PCs
-    fprintf(fileID, ['\t', PC_Str{i_syn},'PC(i,1) = PCs_Synergy(i,',num2str(i_syn),'); \n']);    
+    fprintf(fileID, ['\t', PC_Str{i_syn},'PC(i) = PCs_Synergy(i,',num2str(i_syn-1),'); \n']);    
 end
 fprintf(fileID,'}\n');
 % mus
@@ -65,7 +71,7 @@ fprintf(fileID,'// Mus');
 fprintf(fileID,'\n');
 fprintf(fileID, 'for(int i=0;i<r_Mus;i++){ \n');
 for i_syn=1:N_PCs
-    fprintf(fileID, ['\t', PC_Str{i_syn},'mu(i,1) = Mus_Synergy(i,',num2str(i_syn),'); \n']);    
+    fprintf(fileID, ['\t', PC_Str{i_syn},'mu(i) = Mus_Synergy(i,',num2str(i_syn-1),'); \n']);    
 end
 fprintf(fileID,'}\n');
 
@@ -174,7 +180,7 @@ for i_syn=1:N_PCs
         STR_tO = [STR_tO sumString eval('strcat(t_str,prodString,traj_PC_str)')];
         % Pose
         p_str = strcat(' ',PC_Str{i_syn},'mu ');                            % as --> First_mu*Pose_1_gain <---- etc...
-        STR_pO = [STR_pO sumString eval('strcat(pose_PC_str,prodString,p_str)'),'(i,1)'];
+        STR_pO = [STR_pO sumString eval('strcat(pose_PC_str,prodString,p_str)'),'(i)'];
         
         % Clean the strings
         STR_tNEW = '';
