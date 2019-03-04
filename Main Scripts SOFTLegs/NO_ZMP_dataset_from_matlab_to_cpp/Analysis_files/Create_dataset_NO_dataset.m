@@ -51,7 +51,7 @@ for i=1:size(successful_cases,2)
     
 
     % folder to put results
-    new_folder=['VIS\To_Vis_St_',VAL,'_Sp_',num2str(walk_dist/T*100),'_Fh_',num2str(h_foot*1000),'/'];
+    new_folder=['VIS\To_Vis_St_',VAL,'_Sp_',num2str(walk_dist/T*100),'_Fh_',num2str(h_foot*1000),'_Fl_',num2str(walk_dist*100,2),'/'];
 
     % dispaly figures
     display_step_step=0;
